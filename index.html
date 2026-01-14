@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Abensur | Frontend Developer</title>
+    <!-- Tailwind CSS (Removed CDN) -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="/main.js"></script>
+
+
+
+
+</head>
+
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <!-- Background Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 font-bold text-2xl tracking-tighter">
+                    <span class="text-white">alex</span><span class="text-primary">.dev</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="hover:text-primary transition-colors px-3 py-2 text-sm font-medium">Inicio</a>
+                        <a href="#about"
+                            class="hover:text-primary transition-colors px-3 py-2 text-sm font-medium">Sobre Mí</a>
+                        <a href="#experience"
+                            class="hover:text-primary transition-colors px-3 py-2 text-sm font-medium">Experiencia</a>
+                        <a href="#projects"
+                            class="hover:text-primary transition-colors px-3 py-2 text-sm font-medium">Proyectos</a>
+                        <a href="#contact"
+                            class="bg-white/10 hover:bg-white/20 border border-white/10 px-4 py-2 rounded-full text-sm font-medium transition-all">
+                            Contáctame
+                        </a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden glass-panel border-t-0" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#about" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sobre Mí</a>
+                <a href="#experience" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experiencia</a>
+                <a href="#projects" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Proyectos</a>
+                <a href="#contact" onclick="toggleMenu()"
+                    class="text-primary hover:text-accent block px-3 py-2 rounded-md text-base font-medium">Contáctame</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+                <!-- Text Content -->
+                <div class="flex-1 text-center lg:text-left reveal active">
+                    <div
+                        class="inline-flex items-center px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+                        Disponible para nuevos proyectos
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                        Hola, soy <br>
+                        <span class="text-gradient">Alex Abensur</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Desarrollador Frontend especializado en crear experiencias digitales excepcionales. Transformo
+                        ideas complejas en interfaces elegantes, rápidas y accesibles.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#projects"
+                            class="px-8 py-4 bg-primary hover:bg-indigo-600 text-white rounded-full font-semibold transition-all shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2">
+                            Ver Proyectos <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#" onclick="downloadCV()"
+                            class="px-8 py-4 glass-panel hover:bg-white/10 rounded-full font-semibold transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i> Descargar CV
+                        </a>
+                    </div>
+
+                    <!-- Tech Stack Icons -->
+                    <div class="mt-12 pt-8 border-t border-white/10">
+                        <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">Tech Stack Principal</p>
+                        <div class="flex gap-6 justify-center lg:justify-start text-3xl text-gray-400">
+                            <i class="fab fa-react hover:text-cyan-400 transition-colors" title="React"></i>
+                            <i class="fab fa-js hover:text-yellow-400 transition-colors" title="JavaScript"></i>
+                            <i class="fab fa-html5 hover:text-orange-500 transition-colors" title="HTML5"></i>
+                            <i class="fab fa-css3-alt hover:text-blue-500 transition-colors" title="CSS3"></i>
+                            <i class="fab fa-git-alt hover:text-red-500 transition-colors" title="Git"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Area -->
+                <div class="flex-1 flex justify-center lg:justify-end reveal active">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 profile-glow">
+                        <!-- Placeholder for your photo -->
+                        <div
+                            class="w-full h-full rounded-full overflow-hidden border-4 border-white/10 glass-panel relative z-10 flex items-center justify-center bg-gray-900">
+                            <!-- Replace src with your actual photo URL -->
+                            <img src="foto barr mir.png" alt="Alex Abensur"
+                                class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="hidden absolute inset-0 flex-col items-center justify-center text-center p-4">
+                                <span class="text-4xl font-bold text-gradient">AA</span>
+                                <p class="text-xs text-gray-500 mt-2">Pon tu foto aquí</p>
+                            </div>
+                        </div>
+
+                        <!-- Decorative circling elements -->
+                        <div
+                            class="absolute -inset-4 border border-white/20 rounded-full animate-[spin_10s_linear_infinite]">
+                        </div>
+                        <div
+                            class="absolute -inset-8 border border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse] border-dashed">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / About Section -->
+    <section id="experience" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- About -->
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold mb-6"><span class="text-primary">01.</span> Sobre Mí</h2>
+                    <div class="glass-panel p-8 rounded-2xl">
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Soy un desarrollador apasionado por el código limpio y el diseño pixel-perfect. Me
+                            especializo en el ecosistema de React, pero siempre estoy explorando nuevas tecnologías como
+                            Astro o Next.js.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Mi objetivo es construir aplicaciones web que no solo funcionen perfectamente, sino que
+                            también se sientan "vivas" a través de micro-interacciones y diseños intuitivos.
+                        </p>
+
+                        <div class="mt-8 grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                <span class="text-sm font-medium">Frontend Architecture</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                                <span class="text-sm font-medium">UI/UX Design</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                                <span class="text-sm font-medium">Responsive Web</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                                <span class="text-sm font-medium">Performance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold mb-6"><span class="text-primary">02.</span> Trayectoria</h2>
+                    <div class="space-y-6 border-l-2 border-white/10 ml-3 pl-8 relative">
+                        <!-- Job 1 -->
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-dark bg-primary"></span>
+                            <div class="mb-1 text-sm text-primary font-bold">2023 - Presente</div>
+                            <h3 class="text-xl font-bold text-white">Senior Frontend Dev</h3>
+                            <div class="text-gray-400 text-sm mb-2">Tech Solutions Inc.</div>
+                            <p class="text-gray-400 text-sm">Liderando el desarrollo de interfaces para dashboard
+                                financieros utilizando React y Tailwind CSS.</p>
+                        </div>
+
+                        <!-- Job 2 -->
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-dark bg-gray-600"></span>
+                            <div class="mb-1 text-sm text-gray-400 font-bold">2021 - 2023</div>
+                            <h3 class="text-xl font-bold text-white">Frontend Developer</h3>
+                            <div class="text-gray-400 text-sm mb-2">Agencia Creativa Digital</div>
+                            <p class="text-gray-400 text-sm">Desarrollo de sitios web e-commerce interactivos y landing
+                                pages de alta conversión.</p>
+                        </div>
+
+                        <!-- Job 3 -->
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-dark bg-gray-600"></span>
+                            <div class="mb-1 text-sm text-gray-400 font-bold">2019 - 2021</div>
+                            <h3 class="text-xl font-bold text-white">Junior Web Dev</h3>
+                            <div class="text-gray-400 text-sm mb-2">Freelance</div>
+                            <p class="text-gray-400 text-sm">Inicio de carrera trabajando con clientes internacionales
+                                en proyectos WordPress y React básicos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4"><span class="text-primary">03.</span> Proyectos Destacados</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Una selección de mis trabajos recientes, enfocados en
+                    experiencia de usuario y código robusto.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden project-card reveal group">
+                    <div class="h-48 bg-gray-800 relative overflow-hidden">
+                        <!-- Mockup Image Placeholder -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-900 to-slate-900 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                            <i class="fas fa-wallet text-6xl text-white/20"></i>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <a href="#"
+                                class="p-3 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#"
+                                class="p-3 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Crypto Dashboard</h3>
+                        <p class="text-gray-400 text-sm mb-4">Panel de control para seguimiento de criptomonedas en
+                            tiempo real con gráficos interactivos.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-primary">
+                            <span class="px-2 py-1 bg-primary/10 rounded">React</span>
+                            <span class="px-2 py-1 bg-primary/10 rounded">Recharts</span>
+                            <span class="px-2 py-1 bg-primary/10 rounded">API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-panel rounded-2xl overflow-hidden project-card reveal group">
+                    <div class="h-48 bg-gray-800 relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                            <i class="fas fa-shopping-bag text-6xl text-white/20"></i>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <a href="#"
+                                class="p-3 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#"
+                                class="p-3 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Neon E-commerce</h3>
+                        <p class="text-gray-400 text-sm mb-4">Tienda online moderna con carrito de compras, pasarela de
+                            pagos y modo oscuro.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-primary">
+                            <span class="px-2 py-1 bg-primary/10 rounded">Next.js</span>
+                            <span class="px-2 py-1 bg-primary/10 rounded">Tailwind</span>
+                            <span class="px-2 py-1 bg-primary/10 rounded">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-panel rounded-2xl overflow-hidden project-card reveal group">
+                    <div class="h-48 bg-gray-800 relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-cyan-900 to-slate-900 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                            <i class="fas fa-comment-dots text-6xl text-white/20"></i>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <a href="#"
+                                class="p-3 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#"
+                                class="p-3 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Chat AI App</h3>
+                        <p class="text-gray-400 text-sm mb-4">Interfaz de chat minimalista que se conecta a APIs de
+                            inteligencia artificial.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-primary">
+                            <span class="px-2 py-1 bg-primary/10 rounded">TypeScript</span>
+                            <span class="px-2 py-1 bg-primary/10 rounded">OpenAI</span>
+                            <span class="px-2 py-1 bg-primary/10 rounded">Vite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-4xl font-bold mb-8">¿Listo para empezar un proyecto?</h2>
+            <p class="text-xl text-gray-400 mb-12">
+                Actualmente estoy buscando nuevas oportunidades. Ya sea que tengas una pregunta o solo quieras saludar,
+                mi bandeja de entrada siempre está abierta.
+            </p>
+
+            <a href="mailto:alex.abensur@example.com"
+                class="inline-block px-10 py-5 text-lg font-bold text-white bg-gradient-to-r from-primary to-accent rounded-full hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all transform hover:-translate-y-1">
+                Di Hola <i class="fas fa-paper-plane ml-2"></i>
+            </a>
+
+            <div class="mt-16 flex justify-center gap-8 text-3xl">
+                <a href="#" class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all"><i
+                        class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 hover:-translate-y-1 transition-all"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-sky-400 hover:-translate-y-1 transition-all"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-500 hover:-translate-y-1 transition-all"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-gray-500 border-t border-white/5">
+        <p>Diseñado & Construido por <span class="text-primary">Alex Abensur</span></p>
+        <p class="mt-2">© 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+
+    // Mobile Menu Toggle
+
+</body>
+
+</html>
